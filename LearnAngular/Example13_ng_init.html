@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="scripts/angular.js"></script>
+     
+
+	<meta charset="utf-8" />
+    <style>
+        table {
+            border-collapse: collapse;
+            font-family: Arial;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body ng-app>
+
+     
+<div ng-init="employees = [
+                        { name: 'Prasad', dob: '05/12/1984', gender: '1', salary: '560000.039988' },
+                        { name: 'satish', dob: '12/05/1983', gender: '2', salary: '350000.83789' }
+                    ]">
+
+    <table>
+        <thead><tr>
+    <th>
+        name
+    </th>
+                   <th>
+                       dob
+                   </th>
+                   <th>
+                       gender
+                   </th>
+                   <th>
+                       salary
+                   </th>
+</tr> </thead>
+        <tbody>
+            <tr ng-repeat="emp in employees">
+                <td>{{emp.name}}</td>
+                <td>{{emp.dob}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.salary}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+
+ 
+   
+
+</body>
+</html>

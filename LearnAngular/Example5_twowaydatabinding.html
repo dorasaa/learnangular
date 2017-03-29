@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="mymodule">
+<head>
+    <title></title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/script4_twowaybinding.js"></script>
+	<meta charset="utf-8" />
+</head>
+<body>
+    <!----ng-model can be used with any of the controls like inpuy,select,textarea-->
+    <div ng-controller="mycontroller">
+         
+         
+
+            First name: <input type="text" ng-model="employee.fname" /> <br />
+            Last name: <input type="text" ng-model="employee.lname" /> <br />
+                Gender: <input type="text" ng-model="employee.gender" />
+         
+        <br />
+        <p>Firsnamt: {{employee.fname}}, {{employee.lname}} certify that gender is {{employee.gender}}</p>
+       
+    </div>
+</body>
+</html>

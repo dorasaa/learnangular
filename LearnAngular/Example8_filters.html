@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="mymodule">
+<head>
+    <title></title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/script8_filters.js"></script>
+	<meta charset="utf-8" />
+    <style>
+        table {
+            border-collapse: collapse;
+            font-family: Arial;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body>
+    <div ng-controller="mycontroller">
+        Select Number of Rows:<input type="number" step="1" min="0" max="5" ng-model="rowlimit" />    
+        <br />
+          
+        <table>
+
+            <thead>
+                <tr >
+                    <th>employee</th>
+                    <th>dob</th>
+                    <th>gender</th>
+                    <th>salary</th>
+                    <th>salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employees|limitTo:rowlimit:2">
+                    <td>{{emp.name | uppercase}}</td>
+                    <td>{{emp.dob | date:"dd"}}</td>
+                    <td>{{emp.gender|lowercase}}</td>
+                    <td>{{emp.salary|number:2}}</td>
+                    <td>{{emp.salary|currency:"£"}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/script13_ng-init2_withcontroller.js"></script>
+
+	<meta charset="utf-8" />
+    <style>
+        table {
+            border-collapse: collapse;
+            font-family: Arial;
+        }
+
+        td {
+            border: 1px solid black;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+
+</head>
+<body ng-app="mymodule">
+    <div ng-controller="mycontroller">
+        <ul ng-repeat="country in countries" ng-init="parentIndex = $index">
+
+            <li>
+                {{country.name}},Index: {{$index}}, 
+                <ul ng-repeat="city in country.cities">
+
+                    <li>{{city.name}}, Index: {{$index}}, ParentIndex: {{parentIndex}}</li>
+                     
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
