@@ -1,10 +1,35 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="myapp">
 <head>
     <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/Example22_DB_anchorScrolls.js"></script>
 
+    <meta charset="utf-8" />
+
+<link href="css/Db_scrolls.less" rel="stylesheet" />
+</head>
+<body >
+
+    <div ng-controller="countrycontroller">
+        <span ng-repeat="country in countries">
+            <input type="button" value="{{country.name}}" ng-click="scrollTo(country.name)" />
+        </span>
+        <br /><br />
+
+        <div>
+            <fieldset ng-repeat="country in countries" id="{{country.name}}">
+                <legend>{{country.nameq}}</legend>
+                <ul>
+                    <li ng-repeat="city in country.citylist">
+                         {{city.name}}
+
+                    </li>
+                </ul>
+                 
+            </fieldset>
+
+        </div>
+    </div>
 </body>
 </html>
