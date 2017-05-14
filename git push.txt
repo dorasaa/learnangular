@@ -1,4 +1,5 @@
-goto git 
+goto git
+git init 
 goto c:\projects\learnangular
 
 git add .
